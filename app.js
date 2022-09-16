@@ -182,7 +182,7 @@ function weather(location) {
       //weatherCont[5].textContent = `Original Temperature : ${ktc(
       // data.main.temp
       //)}`;
-      weatherCont[6].textContent = `feels like ${ktc(data.main.feels_like)}`;
+      weatherCont[6].textContent = `Feels like ${ktc(data.main.feels_like)}`;
       weatherCont[7].textContent = `Min temperature ${ktc(data.main.temp_min)}`;
       weatherCont[8].textContent = `Max temperature ${ktc(data.main.temp_max)}`;
       weatherStatement = `sir the weather in ${data.name} is ${
