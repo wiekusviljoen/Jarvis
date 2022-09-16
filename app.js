@@ -174,14 +174,14 @@ function weather(location) {
   xhr.onload = function () {
     if (this.status === 200) {
       let data = JSON.parse(this.responseText);
-      weatherCont[0].textContent = `Location : ${data.name}`;
+      weatherCont[0].textContent = `City : ${data.name}`;
       weatherCont[1].textContent = `Country : ${data.sys.country}`;
       weatherCont[2].textContent = `Weather type : ${data.weather[0].main}`;
-      weatherCont[3].textContent = `Weather description : ${data.weather[0].description}`;
+      weatherCont[3].textContent = `Description : ${data.weather[0].description}`;
       weatherCont[4].src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-      weatherCont[5].textContent = `Original Temperature : ${ktc(
-        data.main.temp
-      )}`;
+      //weatherCont[5].textContent = `Original Temperature : ${ktc(
+      // data.main.temp
+      //)}`;
       weatherCont[6].textContent = `feels like ${ktc(data.main.feels_like)}`;
       weatherCont[7].textContent = `Min temperature ${ktc(data.main.temp_min)}`;
       weatherCont[8].textContent = `Max temperature ${ktc(data.main.temp_max)}`;
