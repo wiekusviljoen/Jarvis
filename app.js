@@ -119,13 +119,13 @@ window.onload = () => {
   }
 
   // timer
-  // setInterval(() => {
-  //   let date = new Date();
-  //   let hrs = date.getHours();
-  //   let mins = date.getMinutes();
-  //   let secs = date.getSeconds();
-  //   time.textContent = `${hrs} : ${mins} : ${secs}`;
-  // }, 1000);
+  setInterval(() => {
+    let date = new Date();
+    let hrs = date.getHours();
+    let mins = date.getMinutes();
+    let secs = date.getSeconds();
+    time.textContent = `${hrs} : ${mins} : ${secs}`;
+  }, 1000);
 };
 
 function formatAMPM(date) {
