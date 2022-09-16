@@ -29,6 +29,15 @@ recognition.onresult = function (event) {
     readout("opening youtube sir");
     window.open("https://www.youtube.com/");
   }
+  // youtube search
+  if (transcript.includes("youtube for")) {
+    readout("opening youtube sir");
+    let input = transcript.split("");
+    input.splice(0, 11);
+    input.pop();
+    input = input.join("").split("").join("+");
+    window.open(`https://www.youtube.com/results?search_query=${input}`);
+  }
 
   //google open
   if (transcript.includes("open google")) {
