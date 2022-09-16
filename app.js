@@ -7,7 +7,7 @@ const speakBtn = document.querySelector("#speak");
 function weather(location) {
   const weatherCont = document.querySelector(".temp").querySelectorAll("*");
 
-  let url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=6860c1da83e8c5136cf4e8c6dd709741`;
+  let url = `http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=6860c1da83e8c5136cf4e8c6dd709741`;
 
   const xhr = new XMLHttpRequest();
   xhr.open("GET", url, true);
@@ -48,7 +48,46 @@ function ktc(k) {
 
 //calling weather
 
-weather("visakhapatnam");
+//jarvis setup
+if (localStorage.getItem("jarvis_setup") !== null) {
+  //weather("KEETMANSHOOP");
+}
+
+//jarvis info setup
+
+const setup = document.querySelector(".jarvis_setup");
+setup.style.display = "none";
+if (localStorage.getItem("jarvis_setup") === null) {
+  setup.style.display = "block";
+  setup.querySelector("button").addEventListener("click", userInfo);
+}
+
+//user info
+function userInfo() {
+  let setupInfo = {
+    name: setup.querySelectorAll("input")[0].value,
+    bio: setup.querySelectorAll("input")[1].value,
+    location: setup.querySelectorAll("input")[2].value,
+    Facebook: setup.querySelectorAll("input")[3].value,
+    Github: setup.querySelectorAll("input")[4].value,
+    Whatsapp: setup.querySelectorAll("input")[5].value,
+  };
+
+  let testArr = [];
+
+  setup.querySelectorAll("input").forEach((e) => {
+    testArr.push(e.value);
+  });
+
+  if (testArr.includes("")) {
+    readout("Sir please enter all information");
+  } else {
+    localStorage.clear();
+    localStorage.setItem("jarvis_setup", JSON.stringify(setupInfo));
+    setup.style.display = "none";
+    weather(JSON.parse(localStorage.getItem("jarvis_setup")).location);
+  }
+}
 
 //speech recoginition setup
 
@@ -66,6 +105,7 @@ recognition.onresult = function (event) {
   let current = event.resultIndex;
   let transcript = event.results[current][0].transcript;
   transcript = transcript.toLowerCase();
+  let userdata = localStorage.getItem("jarvis_setup");
   console.log(`my words :${transcript} `);
 
   if (transcript.includes("hello jarvis")) {
