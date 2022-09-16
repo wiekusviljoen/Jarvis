@@ -18,12 +18,21 @@ recognition.onresult = function (event) {
   let current = event.resultIndex;
   let transcript = event.results[current][0].transcript;
   transcript = transcript.toLowerCase();
+  console.log(`my words :${transcript} `);
 
   if (transcript.includes("hello jarvis")) {
     readout("hello sir");
+    //https://www.youtube.com/
   }
-  /* hi- hello sir
-    open google- opening google "google.com"*/
+
+  if (transcript.includes("open youtube")) {
+    readout("opening youtube sir");
+    window.open("https://www.youtube.com/");
+  }
+  if (transcript.includes("open google")) {
+    readout("opening google sir");
+    window.open("https://www.google.com/");
+  }
 };
 
 //end
@@ -50,10 +59,10 @@ function readout(message) {
   const speech = new SpeechSynthesisUtterance();
   //different voices
 
-  //const allVoices = speechSynthesis.getVoices();
+  const allVoices = speechSynthesis.getVoices();
 
   speech.text = message;
-  // speech.voice = allVoices[6];
+  speech.voice = allVoices[6];
   speech.volume = 1;
   window.speechSynthesis.speak(speech);
   console.log("speaking");
