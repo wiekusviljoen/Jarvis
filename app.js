@@ -178,7 +178,7 @@ function weather(location) {
       weatherCont[1].textContent = `Country : ${data.sys.country}`;
       weatherCont[2].textContent = `Weather type : ${data.weather[0].main}`;
       weatherCont[3].textContent = `Weather description : ${data.weather[0].description}`;
-      weatherCont[4].src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+      weatherCont[4].src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
       weatherCont[5].textContent = `Original Temperature : ${ktc(
         data.main.temp
       )}`;
