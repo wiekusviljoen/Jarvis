@@ -121,7 +121,7 @@ input {
 }
 
 .battery {
-  left: 50%;
+  left: 55%;
   width: 100px;
   transform: translateX(-50%);
 }
@@ -247,7 +247,7 @@ input {
 .small_jarvis {
   position: absolute;
   top: calc(100vh - 370px);
-  left: calc(100vw - 370px);
+  left: calc(100vw - 450px);
 }
 
 .small_jarvis button {

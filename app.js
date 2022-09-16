@@ -176,7 +176,7 @@ function weather(location) {
       let data = JSON.parse(this.responseText);
       weatherCont[0].textContent = `City : ${data.name}`;
       weatherCont[1].textContent = `Country : ${data.sys.country}`;
-      weatherCont[2].textContent = `Weather type : ${data.weather[0].main}`;
+      weatherCont[2].textContent = `Type : ${data.weather[0].main}`;
       weatherCont[3].textContent = `Description : ${data.weather[0].description}`;
       weatherCont[4].src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
       //weatherCont[5].textContent = `Original Temperature : ${ktc(
