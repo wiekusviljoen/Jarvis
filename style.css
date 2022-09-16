@@ -247,7 +247,7 @@ input {
 .small_jarvis {
   position: absolute;
   top: calc(100vh - 370px);
-  left: calc(100vw - 400px);
+  left: calc(100vw - 490px);
 }
 
 .small_jarvis button {
