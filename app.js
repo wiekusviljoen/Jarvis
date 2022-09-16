@@ -58,10 +58,10 @@ let charge, chargeStatus, connectivity, currentTime;
 chargeStatus = "unplugged";
 
 window.onload = () => {
-  // turn_on.play();
+  turn_on.play();
   turn_on.addEventListener("ended", () => {
     setTimeout(() => {
-      // autoJarvis();
+      autoJarvis();
       readOut("Ready to go sir");
       if (localStorage.getItem("jarvis_setup") === null) {
         readOut(
@@ -145,7 +145,7 @@ setInterval(() => {
   formatAMPM(date);
 }, 60000);
 
-// auto friday
+// auto jarvis
 
 function autoJarvis() {
   setTimeout(() => {
@@ -206,7 +206,7 @@ if (localStorage.getItem("jarvis_setup") !== null) {
   weather(JSON.parse(localStorage.getItem("jarvis_setup")).location);
 }
 
-// friday information setup
+// jarvis information setup
 
 const setup = document.querySelector(".jarvis_setup");
 setup.style.display = "none";
@@ -279,7 +279,7 @@ recognition.onresult = function (event) {
   // hi - hello
 
   if (localStorage.getItem("lang") === "en-US") {
-    if (transcript.includes("hi jarvis")) {
+    if (transcript.includes("hello jarvis")) {
       readOut("hello sir");
     }
 
@@ -528,22 +528,6 @@ recognition.onresult = function (event) {
       getCategoryNews(input.join(""));
     }
   }
-
-  if (localStorage.getItem("lang") === "hi-IN") {
-    if (transcript.includes("हैलो जार्विस")) {
-      readOutHindi("हैलो सर");
-    }
-
-    if (transcript.includes("इंग्लिश में बदलो")) {
-      readOutHindi("इंग्लिश में बदल रहा हूँ");
-      speech_lang = "en-US";
-      localStorage.setItem("lang", "en-US");
-      stopingR = true;
-      recognition.stop();
-      location.reload();
-      readOut("ready to go sir");
-    }
-  }
 };
 
 recognition.onend = function () {
@@ -563,16 +547,6 @@ function readOut(message) {
   const speech = new SpeechSynthesisUtterance();
   speech.text = message;
   speech.volume = 1;
-  window.speechSynthesis.speak(speech);
-  console.log("Speaking out");
-  // createMsg("jmsg", message);
-}
-
-function readOutHindi(message) {
-  const speech = new SpeechSynthesisUtterance();
-  speech.text = message;
-  speech.volume = 1;
-  speech.lang = "hi-IN";
   window.speechSynthesis.speak(speech);
   console.log("Speaking out");
   // createMsg("jmsg", message);
