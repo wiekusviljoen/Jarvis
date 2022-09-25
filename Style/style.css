@@ -67,6 +67,7 @@ input {
   border-bottom: 3px solid black;
   width: 30vw;
   padding-left:  10px;
+  border-radius: 5px;
 }
 
 #sub_btn {
@@ -78,7 +79,10 @@ input {
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  
 }
+
+
 
 
 
@@ -93,7 +97,7 @@ input {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgb(43, 202, 250);
+  background-color: rgb(43, 150, 250);
   padding: 50px;
   border-radius: 10px;
   display: flex;
@@ -156,14 +160,15 @@ input {
 
 .temp {
   top: 10px;
-  right: 10px;
+  right: 455px;
   text-align: center;
   font-size: smaller;
   background-color:rgb(119, 178, 230);
   border-radius: 5px;
-  padding: 10px;
+  padding: 15px;
   background-image:url("");
   background-size:cover;
+  size: 25px;
   
   
 }
@@ -235,9 +240,10 @@ input {
 
 #start_jarvis_btn p {
   font-size: 20px;
-  background-color: aqua;
+  
   border-radius: 10px;
-  padding: 5px;
+  
+  
   
   
 
@@ -246,6 +252,7 @@ input {
 #start_jarvis_btn img {
   height: 100px;
   position:absolute;bottom: 55%;
+  
 }
 
 #stop_jarvis_btn {
@@ -263,16 +270,12 @@ input {
   cursor: pointer;
 }
 
-#stop_jarvis_btn p {
-  font-size: 20px;
-  background-color: aqua;
-  border-radius: 10px;
-  padding: 5px;
-}
+
 
 #stop_jarvis_btn img {
   height: 100px;
-  filter: blur(5px);
+  filter: blur(1px);
+  
   position:absolute;bottom: 55%;
 }
 
@@ -300,3 +303,55 @@ input {
   top: 200px;
 }
 
+@keyframes stroke-offset{
+  100% {stroke-dashoffset: -35%;}
+}
+
+
+
+.bg {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, rgb(39, 44, 37) 50%, #09f 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.bg3 {
+  animation-duration:5s;
+}
+
+.content {
+  
+  border-radius:.25em;
+
+  box-sizing:border-box;
+  left:50%;
+  padding:10vmin;
+  position:fixed;
+  text-align:center;
+  top:50%;
+  transform:translate(-50%, -50%);
+}
+
+h1 {
+  font-family:monospace;
+}
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}

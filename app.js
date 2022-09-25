@@ -193,7 +193,7 @@ function userInfo() {
   });
 
   if (testArr.includes("")) {
-    readOut("sir enter your complete information");
+    readOut("please enter your complete information");
   } else {
     localStorage.clear();
     localStorage.setItem("jarvis_setup", JSON.stringify(setupInfo));
@@ -235,7 +235,7 @@ recognition.onresult = function (event) {
   transcript = transcript.toLowerCase();
   let userData = localStorage.getItem("jarvis_setup");
   console.log(transcript);
-  // createMsg("usermsg", transcript);
+  //createMsg("usermsg", transcript);
   // commands
   // hi - hello
 
@@ -248,15 +248,7 @@ recognition.onresult = function (event) {
     if (transcript.includes("what's the current charge")) {
       readOut(`the current charge is ${charge}`);
     }
-    if (transcript.includes("what's the charging status")) {
-      readOut(`the current charging status is ${chargeStatus}`);
-    }
-    if (transcript.includes("current time")) {
-      readOut(currentTime);
-    }
-    if (transcript.includes("connection status")) {
-      readOut(`you are ${connectivity} sir`);
-    }
+
     // jarvis commands
     if (transcript.includes("what are your commands")) {
       readOut("sir here's the list of commands i can follow");
@@ -373,10 +365,10 @@ recognition.onresult = function (event) {
     // userdata access commands
 
     if (transcript.includes("what's my name")) {
-      readOut(`Sir, I know that you are ${JSON.parse(userData).name}`);
+      readOut(` I know that you are ${JSON.parse(userData).name}`);
     }
     if (transcript.includes("what's my bio")) {
-      readOut(`Sir, I know that you are ${JSON.parse(userData).bio}`);
+      readOut(` I know that you are ${JSON.parse(userData).bio}`);
     }
 
     // google
@@ -399,7 +391,7 @@ recognition.onresult = function (event) {
 
     // youtube
     if (transcript.includes("open youtube")) {
-      readOut("opening youtube sir");
+      readOut("opening youtube ");
       let a = window.open("https://www.youtube.com/");
       windowsB.push(a);
     }
@@ -416,7 +408,7 @@ recognition.onresult = function (event) {
 
     // instagram
     if (transcript.includes("open instagram")) {
-      readOut("opening instagram sir");
+      readOut("opening instagram ");
       let a = window.open("https://www.instagram.com");
       windowsB.push(a);
     }
@@ -428,7 +420,7 @@ recognition.onresult = function (event) {
         );
         windowsB.push(a);
       } else {
-        readOut("sir i didn't found your instagram information");
+        readOut(" i didn't find your instagram information");
       }
     }
     // twitter
@@ -440,7 +432,7 @@ recognition.onresult = function (event) {
       windowsB.push(a);
     }
     if (transcript.includes("open twitter")) {
-      readOut("opening twitter sir");
+      readOut("opening twitter ");
       let a = window.open(`https://twitter.com/`);
       windowsB.push(a);
     }

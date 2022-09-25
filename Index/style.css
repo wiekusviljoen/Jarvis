@@ -61,7 +61,7 @@ a {
 p {
   font-weight: 700;
   text-align: center;
-  font-size: 30px;
+  font-size: 15px;
   font-family: Hack, sans-serif;
   text-transform: uppercase;
   background: linear-gradient(90deg, #BD0034, #FDB731, #000);
@@ -70,8 +70,8 @@ p {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   background-repeat: no-repeat;
-  background-size: 80%;
-  animation: shine 5s linear infinite;
+  background-size: 100%;
+
   position: relative;
   top: 250px;
   left: 120%;
@@ -93,7 +93,7 @@ p {
   animation: shine 9.5s linear infinite;
   position: absolute;
   top: 290px;
-  left: 138%;
+  left: 135%;
 }
 
 .p2{
@@ -111,9 +111,48 @@ p {
   background-size: 80%;
   animation: shine 9.5s linear infinite;
   position: relative;
-  top: 310px;
+  top: 100px;
   left: 100%;
 }
+
+.p3{
+  font-weight: 700;
+  text-align: center;
+  font-size: 15px;
+  font-family: Hack, sans-serif;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #BD0034, #FDB731, #000);
+  
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: shine 8s linear infinite;
+  position: relative;
+  top: 510px;
+  left: 505%;
+}
+
+.p4{
+  font-weight: 700;
+  text-align: center;
+  font-size: 30px;
+  font-family: Hack, sans-serif;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #BD0034, #FDB731, #000);
+  
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: shine 9.5s linear infinite;
+  position: relative;
+  top: 290px;
+  left: 100%;
+}
+
 
 @keyframes shine {
   0% {
