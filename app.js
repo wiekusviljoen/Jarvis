@@ -10,9 +10,7 @@ let jarvisComs = [];
 jarvisComs.push("hi jarvis");
 jarvisComs.push("what are your commands");
 jarvisComs.push("close this - to close opened popups");
-jarvisComs.push(
-  "change my information - information regarding your acoounts and you"
-);
+jarvisComs.push("change my information");
 jarvisComs.push("whats the weather");
 jarvisComs.push("show the full weather report");
 jarvisComs.push("are you there - to check jarviss presence");
@@ -31,7 +29,7 @@ jarvisComs.push("open instagram");
 jarvisComs.push("open my instagram profile");
 jarvisComs.push("open github");
 jarvisComs.push("open my github profile");
-
+jarvisComs.push("Say -Close This- to exit this tab");
 // youtube window
 let ytbWindow;
 
