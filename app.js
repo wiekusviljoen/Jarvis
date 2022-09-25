@@ -5,32 +5,32 @@ const machine = document.querySelector(".machine");
 // const msgs = document.querySelector(".messages");
 // whether the recognition is stopiing on my command or automatically
 let stopingR = false;
-// friday's commands
-let fridayComs = [];
-fridayComs.push("hi friday");
-fridayComs.push("what are your commands");
-fridayComs.push("close this - to close opened popups");
-fridayComs.push(
+// jarvis's commands
+let jarvisComs = [];
+jarvisComs.push("hi jarvis");
+jarvisComs.push("what are your commands");
+jarvisComs.push("close this - to close opened popups");
+jarvisComs.push(
   "change my information - information regarding your acoounts and you"
 );
-fridayComs.push("whats the weather or temperature");
-fridayComs.push("show the full weather report");
-fridayComs.push("are you there - to check fridays presence");
-fridayComs.push("shut down - stop voice recognition");
-fridayComs.push("open google");
-fridayComs.push('search for "your keywords" - to search on google ');
-fridayComs.push("open whatsapp");
-fridayComs.push("open youtube");
-fridayComs.push('play "your keywords" - to search on youtube ');
-fridayComs.push("close this youtube tab - to close opened youtube tab");
-fridayComs.push("open firebase");
-fridayComs.push("open netlify");
-fridayComs.push("open twitter");
-fridayComs.push("open my twitter profile");
-fridayComs.push("open instagram");
-fridayComs.push("open my instagram profile");
-fridayComs.push("open github");
-fridayComs.push("open my github profile");
+jarvisComs.push("whats the weather");
+jarvisComs.push("show the full weather report");
+jarvisComs.push("are you there - to check jarviss presence");
+jarvisComs.push("shut down - stop voice recognition");
+jarvisComs.push("open google");
+jarvisComs.push('search for "your keywords" - to search on google ');
+jarvisComs.push("open whatsapp");
+jarvisComs.push("open youtube");
+jarvisComs.push('play "your keywords" - to search on youtube ');
+jarvisComs.push("close this youtube tab - to close opened youtube tab");
+jarvisComs.push("open firebase");
+jarvisComs.push("open netlify");
+jarvisComs.push("open twitter");
+jarvisComs.push("open my twitter profile");
+jarvisComs.push("open instagram");
+jarvisComs.push("open my instagram profile");
+jarvisComs.push("open github");
+jarvisComs.push("open my github profile");
 
 // youtube window
 let ytbWindow;
@@ -52,13 +52,12 @@ let hrs = date.getHours();
 let mins = date.getMinutes();
 let secs = date.getSeconds();
 
-// this is what friday tells about weather
+// this is what jarvis tells about weather
 let weatherStatement = "";
 let charge, chargeStatus, connectivity, currentTime;
 chargeStatus = "unplugged";
 
 window.onload = () => {
-  turn_on.play();
   turn_on.addEventListener("ended", () => {
     setTimeout(() => {
       autoJarvis();
@@ -71,52 +70,14 @@ window.onload = () => {
     }, 200);
   });
 
-  fridayComs.forEach((e) => {
+  jarvisComs.forEach((e) => {
     document.querySelector(".commands").innerHTML += `<p>#${e}</p><br />`;
   });
   // battery
-  let batteryPromise = navigator.getBattery();
-  batteryPromise.then(batteryCallback);
+  //let batteryPromise = navigator.getBattery();
+  ///batteryPromise.then(batteryCallback);
 
   // internet connectivity
-
-  if (navigator.onLine) {
-    document.querySelector("#internet").textContent = "online";
-    connectivity = "online";
-  } else {
-    document.querySelector("#internet").textContent = "offline";
-    connectivity = "offline";
-  }
-
-  setInterval(() => {
-    if (navigator.onLine) {
-      document.querySelector("#internet").textContent = "online";
-      connectivity = "online";
-    } else {
-      document.querySelector("#internet").textContent = "offline";
-      connectivity = "offline";
-    }
-  }, 60000);
-
-  function batteryCallback(batteryObject) {
-    printBatteryStatus(batteryObject);
-    setInterval(() => {
-      printBatteryStatus(batteryObject);
-    }, 5000);
-  }
-  function printBatteryStatus(batteryObject) {
-    document.querySelector("#battery").textContent = `${(
-      batteryObject.level * 100
-    ).toFixed(2)}%`;
-    charge = batteryObject.level * 100;
-    if (batteryObject.charging === true) {
-      document.querySelector(".battery").style.width = "200px";
-      document.querySelector("#battery").textContent = `${(
-        batteryObject.level * 100
-      ).toFixed(2)}% Charging`;
-      chargeStatus = "plugged in";
-    }
-  }
 
   // timer
   setInterval(() => {
@@ -196,7 +157,7 @@ function weather(location) {
   xhr.send();
 }
 
-// convert kelvin to celcius
+// convert  to celcius
 function ktc(k) {
   k = k - 273.15;
   return k.toFixed(2);
@@ -245,7 +206,7 @@ function userInfo() {
 
 // speech lang
 
-let speech_lang = "hi-IN"; // "hi-IN" | "en-US"
+let speech_lang = "en-US";
 if (localStorage.getItem("lang") === null) {
   localStorage.setItem("lang", "en-US");
 }
@@ -305,7 +266,7 @@ recognition.onresult = function (event) {
       document.querySelector(".commands").style.display = "block";
     }
     // jarvis bio
-    if (transcript.includes("Tell about yourself")) {
+    if (transcript.includes("Tell me about yourself")) {
       readOut(
         "sir, i am a jarvis, a voice asistant made for browsers using javascript by one of the Enthusiastic dev on the planet. I can do anything which can be done from a browser."
       );
@@ -546,23 +507,11 @@ recognition.onend = function () {
 function readOut(message) {
   const speech = new SpeechSynthesisUtterance();
   speech.text = message;
-  speech.volume = 1;
+  speech.volume = 2;
   window.speechSynthesis.speak(speech);
   console.log("Speaking out");
   // createMsg("jmsg", message);
 }
-
-// small jarvis
-const smallJarvis = document.querySelector("#small_jarvis");
-
-smallJarvis.addEventListener("click", () => {
-  window.open(
-    `${window.location.href}`,
-    "newWindow",
-    "menubar=true,location=true,resizable=false,scrollbars=false,width=200,height=200,top=0,left=0"
-  );
-  window.close();
-});
 
 document.querySelector("#jarvis_start").addEventListener("click", () => {
   recognition.start();
@@ -593,45 +542,8 @@ let year = date.getFullYear();
 
 async function getNews() {
   var url =
-    "https://newsapi.org/v2/top-headlines?country=in&apiKey=b0712dc2e5814a1bb531e6f096b3d7d3";
+    "https://newsapi.org/v2/top-headlines?country=in&apiKey=9567594f840f46a3a1c32cd81bd706e1";
   var req = new Request(url);
-  await fetch(req)
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      let arrNews = data.articles;
-      arrNews.length = 10;
-      let a = [];
-      arrNews.forEach((e, index) => {
-        a.push(index + 1);
-        a.push(".........");
-        a.push(e.title);
-        a.push(".........");
-      });
-      readOut(a);
-    });
-}
-
-// category news
-
-let yyyy, mm, dd;
-
-dd = date.getDate();
-mm = date.getMonth();
-yyyy = date.getFullYear();
-
-async function getCategoryNews(category) {
-  var url =
-    "https://newsapi.org/v2/everything?" +
-    `q=${category}&` +
-    `from=${yyyy}-${mm}-${dd}&` +
-    "sortBy=popularity&" +
-    "apiKey=b0712dc2e5814a1bb531e6f096b3d7d3";
-
-  // https://newsapi.org/v2/everything?q=Apple&from=2021-09-19&sortBy=popularity&apiKey=API_KEY
-
-  var req = new Request(url);
-
   await fetch(req)
     .then((response) => response.json())
     .then((data) => {
