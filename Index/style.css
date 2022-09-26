@@ -1,39 +1,4 @@
 
-.topnav {
-    background-color: #333;
-    border-radius: 5px;
-    position: absolute;
-    display: grid;
-    top: 200px;
-  }
-  
-  /* Style the links inside the navigation bar */
-  .topnav a {
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    position: relative;
-    border-radius: 5px;
-    display: grid;
-  }
-  
-  /* Change the color of links on hover */
-  .topnav a:hover {
-    background-color: #ddd;
-    color: black;
-    display: grid;
-    
-  }
-  
-  /* Add a color to the active/current link */
-  .topnav a.active {
-    background-color: #04AA6D;
-    color: white;
-    display: grid;
-  }
 
  .body{
     background-size: cover;
@@ -164,12 +129,8 @@ p {
 }
 
 /*  Checkout my other pens on  https://codepen.io/grohit/  */
-@import url(https://fonts.googleapis.com/css?family=Montserrat);
 
-html, body{
-  height: 100%;
-  font-weight: 800;
-}
+
 
 
 
@@ -257,9 +218,7 @@ svg {
   transform:translate(-50%, -50%);
 }
 
-h1 {
-  font-family:monospace;
-}
+
 
 @keyframes slide {
   0% {
