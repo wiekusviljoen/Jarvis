@@ -139,7 +139,8 @@ svg {
     height: 180px;
     margin: 0 auto;
     top: 25px;
-    right: 17%;
+    right: 15%;
+    position: absolute;
 }
 
 .text-copy {
