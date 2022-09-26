@@ -62,7 +62,7 @@ window.onload = () => {
       readOut("Ready to go sir");
       if (localStorage.getItem("jarvis_setup") === null) {
         readOut(
-          "Sir, kindly fill out the form on your screen so that you could access most of my features and if you want to see my commands see a warning in the console"
+          "plese fill out the form on your screen so that you could access most of my features and if you want to see my commands see a warning in the console"
         );
       }
     }, 200);
@@ -195,7 +195,9 @@ function userInfo() {
   });
 
   if (testArr.includes("")) {
-    readOut("please enter your complete information");
+    readOut(
+      "please enter your complete information so that I can communicate with you the best I can"
+    );
   } else {
     localStorage.clear();
     localStorage.setItem("jarvis_setup", JSON.stringify(setupInfo));
@@ -262,7 +264,7 @@ recognition.onresult = function (event) {
     // jarvis bio
     if (transcript.includes("Tell me about yourself")) {
       readOut(
-        "sir, i am a jarvis, a voice asistant made for browsers using javascript by one of the Enthusiastic dev on the planet. I can do anything which can be done from a browser."
+        " i am a jarvis, a voice asistant made for browsers using javascript by one of the Enthusiastic dev on the planet. I can do anything which can be done from a browser."
       );
     }
 
