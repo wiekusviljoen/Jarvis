@@ -56,7 +56,7 @@ input{
 
 .name{
     position: absolute ;right: 550px;
-    position: absolute;top: 80px;
+    position: absolute;top: 120px;
     border-radius: 5px;
     font-size: 15px;
    
@@ -64,12 +64,12 @@ input{
 
 .email{
     position: absolute ;right: 550px;
-    position: absolute;top: 145px;
+    position: absolute;top: 180px;
     border-radius: 5px;
     font-size: 15px;
 }
 .messagetxt{
-    position: absolute;top: 230px;
+    position: absolute;top: 240px;
     position: absolute ;right: 535px;
     height: 100px;
     width: 300px;
@@ -130,4 +130,51 @@ input{
     100% {
       transform:translateX(25%);
     }
+}
+svg {
+    display: block;
+    font: 5em 'Montserrat';
+    width: 960px;
+    height: 180px;
+    margin: 0 auto;
+    top: 25px;
+    right: 17%;
+}
+
+.text-copy {
+    fill: none;
+    stroke: white;
+    stroke-dasharray: 6% 29%;
+    stroke-width: 5px;
+    stroke-dashoffset: 0%;
+    animation: stroke-offset 8s infinite linear;
+}
+
+.text-copy:nth-child(1){
+  stroke: #a31e3f;
+  animation-delay: -1;
+}
+
+.text-copy:nth-child(2){
+  stroke: #ebdd13;
+  animation-delay: -2s;
+}
+
+.text-copy:nth-child(3){
+  stroke: #BD0034;
+  animation-delay: -3s;
+}
+
+.text-copy:nth-child(4){
+  stroke: #BD0034;
+  animation-delay: -4s;
+}
+
+.text-copy:nth-child(5){
+  stroke: #31fdf3;
+  animation-delay: -5s;
+}
+
+@keyframes stroke-offset{
+  100% {stroke-dashoffset: -35%;}
 }
