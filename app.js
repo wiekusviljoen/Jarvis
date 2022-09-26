@@ -42,7 +42,7 @@ let ytbWindow;
 // }
 
 // show a warn to check for all the commands
-console.warn('*to check for the commands speak "what are your commands"');
+console.warn('*please say to jarvis: "tell me about this developer"');
 
 // date and time
 let date = new Date();
@@ -308,6 +308,13 @@ recognition.onresult = function (event) {
     if (transcript.includes("are you there")) {
       readOut("yes sir");
     }
+    //tell me about Petrus
+    if (transcript.includes("tell me about this developer")) {
+      readOut(
+        "Petrus is an ambitious developer. He always treat people with respect and can take criticism well. He is creative and loyal and also hard-working. He is proficient in html, css and javahscript. He is also familiar with c# and dot net. He loves web development aspecially 3D website development. He is a self starter and goal-driven. He is used to working from home. Working from home is the best choice because petrus suffers from a chronic disability called cystic fibrosis. He used to be a farmer, but the dust is bad for his lungs, so petrus and his wife moved to cape town to get out of the dust and to follow his dream to become a developer. to see what orders i can follow ...please say.. 'whats your commands'."
+      );
+    }
+
     // close voice recognition
     if (transcript.includes("shut down")) {
       readOut("Ok sir i will take a nap");
@@ -503,7 +510,7 @@ recognition.onend = function () {
 function readOut(message) {
   const speech = new SpeechSynthesisUtterance();
   speech.text = message;
-  speech.volume = 2;
+  speech.volume = 5;
   window.speechSynthesis.speak(speech);
   console.log("Speaking out");
   // createMsg("jmsg", message);
