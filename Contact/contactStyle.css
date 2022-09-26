@@ -86,6 +86,7 @@ input{
     background-color: #09f;
     border: none;
     padding: 5px;
+    color: white;
 }
 
 
@@ -166,7 +167,7 @@ svg {
 }
 
 .text-copy:nth-child(4){
-  stroke: #BD0034;
+  stroke: #070707;
   animation-delay: -4s;
 }
 

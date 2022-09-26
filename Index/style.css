@@ -93,12 +93,12 @@ p {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-repeat: no-repeat;
+  
   background-size: 80%;
   animation: shine 8s linear infinite;
-  position: relative;
+  position: absolute;left: 644px;
   top: 510px;
-  left: 505%;
+ 
 }
 
 .p4{
@@ -143,7 +143,8 @@ svg {
     height: 180px;
     margin: 0 auto;
     top: 25px;
-    right: 17%;
+    right: -150%;
+    position: absolute;
 }
 
 .text-copy {
