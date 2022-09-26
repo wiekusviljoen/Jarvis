@@ -114,7 +114,7 @@ p {
   -webkit-text-fill-color: transparent;
   background-repeat: no-repeat;
   background-size: 80%;
-  animation: shine 9.5s linear infinite;
+  animation: shine 5s linear infinite;
   position: absolute;left: 600px;
   top: 200px;
  
