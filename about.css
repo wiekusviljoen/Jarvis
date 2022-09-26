@@ -3,10 +3,12 @@ section{
 display: flex;
 background-color:#121212;
 width: 180px;
-position: relative;left: 1100px;
+position: absolute;left: 1100px;
+position: absolute;top: 200px;
 border-radius: 5px;
 height: 50px;
 border: none;
+
 }
 
 body{
@@ -17,10 +19,25 @@ body{
 .typing{
     justify-content: center; display: flex;
     padding-top: 5em;
+    position: relative;top: 450px;
     
 }
 
+.typing1{
+    justify-content: center; display: flex;
+    padding-top: 5em;
+    position: relative;top: 50px;
+    
+}
 
+.typing2{
+    justify-content: center; display: flex;
+    
+    position: relative;top: -200px;
+    
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 /* DEMO-SPECIFIC STYLES */
 .typewriter h1 {
@@ -39,6 +56,40 @@ body{
 
 
 }
+
+.typewriter1 h1 {
+  
+ 
+    color: #fff;
+    font-family: monospace;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+     /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(30, end),
+      blink-caret .5s step-end infinite;
+  
+  
+  }
+
+  .typewriter2 h1 {
+  
+ 
+    color: #fff;
+    font-family: monospace;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+     /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(30, end),
+      blink-caret .5s step-end infinite;
+  
+  
+  }
 
 /* The typing effect */
 @keyframes typing {
@@ -84,4 +135,61 @@ body{
     text-align:center;
     top:50%;
     transform:translate(-50%, -50%);
+  }
+
+  @keyframes slide {
+    0% {
+      transform:translateX(-25%);
+    }
+    100% {
+      transform:translateX(25%);
+    }
+  }
+
+  
+  .p4{
+    font-weight: 700;
+    text-align: center;
+    font-size: 35px;
+    font-family: Hack, sans-serif;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #BD0034, #FDB731, #000);
+    
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    background-size: 80%;
+    animation: shine 5s linear infinite;
+    position: absolute;left: 500px;
+    top: 100px;
+   
+  }.p5{
+    font-weight: 700;
+    text-align: center;
+    font-size: 20px;
+    font-family: Hack, sans-serif;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #BD0034, #FDB731, #000);
+    
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    background-size: 80%;
+    animation: shine 5s linear infinite;
+    position: absolute;left: 500px;
+    top: 150px;
+   
+  }
+
+
+
+  @keyframes shine {
+    0% {
+      background-position-x: -500%;
+    }
+    100% {
+      background-position-x: 500%;
+    }
   }
