@@ -274,7 +274,7 @@ recognition.onresult = function (event) {
 
     // close popups
     if (transcript.includes("close this")) {
-      readOut("closing the tab sir");
+      readOut("closing the tab ");
       document.querySelector(".commands").style.display = "none";
       if (window.innerWidth >= 401) {
         window.resizeTo(250, 250);
@@ -284,7 +284,7 @@ recognition.onresult = function (event) {
 
     // info change
     if (transcript.includes("change my information")) {
-      readOut("Opening the information tab sir");
+      readOut("Opening the information tab ");
       localStorage.clear();
 
       if (window.innerWidth <= 400) {
@@ -300,7 +300,7 @@ recognition.onresult = function (event) {
     }
 
     if (transcript.includes("full weather report")) {
-      readOut("opening the weather report sir");
+      readOut("opening the weather report");
       let a = window.open(
         `https://www.google.com/search?q=weather+in+${
           JSON.parse(localStorage.getItem("jarvis_setup")).location
@@ -310,7 +310,7 @@ recognition.onresult = function (event) {
     }
     // availability check
     if (transcript.includes("are you there")) {
-      readOut("yes sir");
+      readOut("yes I'm still here");
     }
     //tell me about Petrus
     if (transcript.includes("tell me about this developer")) {
@@ -321,7 +321,7 @@ recognition.onresult = function (event) {
 
     // close voice recognition
     if (transcript.includes("shut down")) {
-      readOut("Ok sir i will take a nap");
+      readOut("Ok i will take a nap");
       stopingR = true;
       recognition.stop();
     }
