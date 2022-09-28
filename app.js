@@ -2,6 +2,7 @@ const turn_on = document.querySelector("#turn_on");
 const jarvis_intro = document.querySelector("#j_intro");
 const time = document.querySelector("#time");
 const machine = document.querySelector(".machine");
+const submit = document.getElementById("sub_btn");
 // const msgs = document.querySelector(".messages");
 // whether the recognition is stopiing on my command or automatically
 let stopingR = false;
@@ -21,7 +22,7 @@ jarvisComs.push("open whatsapp");
 jarvisComs.push("open youtube");
 jarvisComs.push('play "your keywords" - to search on youtube ');
 jarvisComs.push("close this youtube tab - to close opened youtube tab");
-jarvisComs.push("open firebase");
+jarvisComs.push("top headlines-to hear latest news");
 jarvisComs.push("open netlify");
 jarvisComs.push("open twitter");
 jarvisComs.push("open my twitter profile");
