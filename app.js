@@ -11,10 +11,10 @@ jarvisComs.push("hi jarvis");
 jarvisComs.push("what are your commands");
 jarvisComs.push("close this - to close opened popups");
 jarvisComs.push("change my information");
-jarvisComs.push("whats the weather");
-jarvisComs.push("show the full weather report");
-jarvisComs.push("are you there - to check jarviss presence");
-jarvisComs.push("shut down - stop voice recognition");
+jarvisComs.push("whats my name");
+jarvisComs.push("whats the temperature");
+jarvisComs.push("full weather report");
+jarvisComs.push("are you there - to check jarvis presence");
 jarvisComs.push("open google");
 jarvisComs.push('search for "your keywords" - to search on google ');
 jarvisComs.push("open whatsapp");
@@ -42,7 +42,8 @@ let ytbWindow;
 // }
 
 // show a warn to check for all the commands
-console.warn('*please say to jarvis: "tell me about this developer"');
+console.warn('*please click on speak button and say to jarvis: "hello jarvis"');
+console.warn('*then say to jarvis: "tell me about this developer"');
 
 // date and time
 let date = new Date();
@@ -245,7 +246,9 @@ recognition.onresult = function (event) {
 
   if (localStorage.getItem("lang") === "en-US") {
     if (transcript.includes("hello jarvis")) {
-      readOut("hello sir");
+      readOut(
+        "hello there, how can i help you? please say, show your commands, to see what i can do"
+      );
     }
 
     // some casual commands
@@ -262,9 +265,9 @@ recognition.onresult = function (event) {
       document.querySelector(".commands").style.display = "block";
     }
     // jarvis bio
-    if (transcript.includes("Tell me about yourself")) {
+    if (transcript.includes("who are you")) {
       readOut(
-        " i am a jarvis, a voice asistant made for browsers using javascript by one of the Enthusiastic dev on the planet. I can do anything which can be done from a browser."
+        " i am jarvis, a voice assistant created by petrus using javascript. I am here to assist you."
       );
     }
 
