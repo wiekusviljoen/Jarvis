@@ -43,8 +43,14 @@ let ytbWindow;
 // }
 
 // show a warn to check for all the commands
-console.warn('*please click on speak button and say to jarvis: "hello jarvis"');
-console.warn('*then say to jarvis: "tell me about this developer"');
+
+console.warn(
+  '* click on speak button and say to jarvis: "tell me about this developer"'
+);
+
+console.warn(
+  '*please click on speak button and say to jarvis: "what are your commands, to see what jarvis can do"'
+);
 
 // date and time
 let date = new Date();
@@ -248,7 +254,7 @@ recognition.onresult = function (event) {
   if (localStorage.getItem("lang") === "en-US") {
     if (transcript.includes("hello jarvis")) {
       readOut(
-        "hello there, how can i help you? please say, show your commands, to see what i can do"
+        "hello there, how can i help you? please say, what are your commands, to see what i can do"
       );
     }
 
